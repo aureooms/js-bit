@@ -1,0 +1,17 @@
+{
+	"debug": false,
+	"code": {
+		"test": [
+			"test",
+			"js"
+		],
+		"main": [
+			"js",
+			"dist",
+			"bit.js"
+		]
+	},
+	"out": "js/dist/",
+	"src": "js/src/",
+	"ns": "bit"
+}
