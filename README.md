@@ -8,3 +8,8 @@ bit twiddling hacks code bricks for JavaScript
 [![Dependencies Status](https://david-dm.org/aureooms/js-bit.png)](https://david-dm.org/aureooms/js-bit#info=dependencies)
 [![devDependencies Status](https://david-dm.org/aureooms/js-bit/dev-status.png)](https://david-dm.org/aureooms/js-bit#info=devDependencies)
 [![Code Climate](https://codeclimate.com/github/aureooms/js-bit.png)](https://codeclimate.com/github/aureooms/js-bit)
+
+references
+
+ - https://graphics.stanford.edu/~seander/bithacks.html
+ - https://github.com/boothj5/bit-twiddling/blob/master/basic.c
