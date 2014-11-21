@@ -4,13 +4,14 @@
  * Returns the block that a bit is in.
  */
 
-var __bfi__ = function (r) {
+var __bfi__ = function ( r ) {
 
-	var bfi = function (i) {
-		return i / r | 0;
-	};
+	return function ( i ) {
 
-	return bfi;
-};
+		return i / r | 0 ;
 
-exports.__bfi__ = __bfi__;
+	} ;
+	
+} ;
+
+exports.__bfi__ = __bfi__ ;

@@ -4,75 +4,6 @@
 
 
 /* js/src/array */
-/* js/src/array/aflip.js */
-
-
-/**
- * Flips a bit of an array of words.
- */
-
-var __aflip__ = function (flip, bfi, iib) {
-
-	var aflip = function (a, i) {
-		var j, k;
-
-		j = bfi(i);
-		k = iib(j);
-
-		a[j] = flip(a[j], k);
-	};
-
-	return aflip;
-};
-
-exports.__aflip__ = __aflip__;
-
-/* js/src/array/aset.js */
-
-
-/**
- * Sets a bit of an array of words.
- */
-
-var __aset__ = function (set, bfi, iib) {
-
-	var aset = function (a, i) {
-		var j, k;
-
-		j = bfi(i);
-		k = iib(j);
-
-		a[j] = set(a[j], k);
-	};
-
-	return aset;
-};
-
-exports.__aset__ = __aset__;
-
-/* js/src/array/aunset.js */
-
-
-/**
- * Unsets a bit of an array of words.
- */
-
-var __aunset__ = function (unset, bfi, iib) {
-
-	var aunset = function (a, i) {
-		var j, k;
-
-		j = bfi(i);
-		k = iib(j);
-
-		a[j] = unset(a[j], k);
-	};
-
-	return aunset;
-};
-
-exports.__aunset__ = __aunset__;
-
 /* js/src/array/bfi.js */
 
 
@@ -80,16 +11,65 @@ exports.__aunset__ = __aunset__;
  * Returns the block that a bit is in.
  */
 
-var __bfi__ = function (r) {
+var __bfi__ = function ( r ) {
 
-	var bfi = function (i) {
-		return i / r | 0;
-	};
+	return function ( i ) {
 
-	return bfi;
-};
+		return i / r | 0 ;
 
-exports.__bfi__ = __bfi__;
+	} ;
+	
+} ;
+
+exports.__bfi__ = __bfi__ ;
+
+/* js/src/array/flip.js */
+
+
+/**
+* Flips a bit of an array of words.
+*/
+
+var __flip__ = function ( wflip , bfi , iib ) {
+
+	return function ( a , i ) {
+
+		var j , k ;
+
+		j = bfi( i ) ;
+		k = iib( i ) ;
+
+		a[j] = wflip( a[j] , k ) ;
+
+	} ;
+
+} ;
+
+exports.__flip__ = __flip__ ;
+
+/* js/src/array/get.js */
+
+
+/**
+* Gets a bit of an array of words.
+*/
+
+var __get__ = function ( wget , bfi , iib ) {
+
+	return function ( a , i ) {
+
+		var j , k ;
+
+		j = bfi( i ) ;
+		k = iib( i ) ;
+
+		return wget( a[j] , k ) ;
+
+	} ;
+
+} ;
+
+exports.__get__ = __get__ ;
 
 /* js/src/array/iib.js */
 
@@ -98,56 +78,97 @@ exports.__bfi__ = __bfi__;
  * Return the index of a bit in its block.
  */
 
-var __iib__ = function (r) {
+var __iib__ = function ( r ) {
 
-	var iib = function (i) {
-		return i % r;
-	};
+	return function ( i ) {
 
-	return iib;
-};
+		return i % r ;
 
-exports.__iib__ = __iib__;
+	} ;
+
+} ;
+
+exports.__iib__ = __iib__ ;
+
+/* js/src/array/set.js */
+
+
+/**
+* Sets a bit of an array of words.
+*/
+
+var __set__ = function ( wset , bfi , iib ) {
+
+	return function ( a , i ) {
+
+		var j , k ;
+
+		j = bfi( i ) ;
+		k = iib( i ) ;
+
+		a[j] = wset( a[j] , k ) ;
+
+	} ;
+
+} ;
+
+exports.__set__ = __set__ ;
+
+/* js/src/array/unset.js */
+
+
+/**
+ * Unsets a bit of an array of words.
+ */
+
+var __unset__ = function ( wunset , bfi , iib ) {
+
+	return function ( a , i ) {
+
+		var j , k ;
+
+		j = bfi( i ) ;
+		k = iib( i ) ;
+
+		a[j] = wunset( a[j] , k ) ;
+
+	} ;
+	
+} ;
+
+exports.__unset__ = __unset__ ;
 
 /* js/src/word */
-/* js/src/word/flip.js */
+/* js/src/word/wflip.js */
 
-var flip = function (b, i) {
-	return b ^ (1 << i);
-};
+var wflip = function ( b , i ) {
+	return b ^ ( 1 << i ) ;
+} ;
 
-exports.flip = flip;
+exports.wflip = wflip ;
 
-/* js/src/word/get.js */
+/* js/src/word/wget.js */
 
-var get = function (b, i) {
-	return b & (1 << i);
-};
+var wget = function ( b , i ) {
+	return b & ( 1 << i ) ;
+} ;
 
-exports.get = get;
+exports.wget = wget ;
 
-/* js/src/word/mask.js */
+/* js/src/word/wset.js */
 
-var mask = function (i) {
-	return 1 << i;
-};
+var wset = function ( b , i ) {
+	return b | ( 1 << i ) ;
+} ;
 
-exports.mask = mask;
+exports.wset = wset ;
 
-/* js/src/word/set.js */
+/* js/src/word/wunset.js */
 
-var set = function (b, i) {
-	return b | (1 << i);
-};
+var wunset = function ( b , i ) {
+	return b & ~( 1 << i ) ;
+} ;
 
-exports.set = set;
-
-/* js/src/word/unset.js */
-
-var unset = function (b, i) {
-	return b & ~(1 << i);
-};
-
-exports.unset = unset;
+exports.wunset = wunset ;
 
 })(typeof exports === 'undefined' ? this['bit'] = {} : exports);

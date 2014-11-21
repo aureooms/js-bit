@@ -4,13 +4,14 @@
  * Return the index of a bit in its block.
  */
 
-var __iib__ = function (r) {
+var __iib__ = function ( r ) {
 
-	var iib = function (i) {
-		return i % r;
-	};
+	return function ( i ) {
 
-	return iib;
-};
+		return i % r ;
 
-exports.__iib__ = __iib__;
+	} ;
+
+} ;
+
+exports.__iib__ = __iib__ ;
