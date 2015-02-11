@@ -24,7 +24,7 @@
 		"js",
 		"twiddling"
 	],
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"scripts": {
 		"test": "./node_modules/.bin/aureooms-node-package-test",
 		"doc": "./node_modules/.bin/groc",
