@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><title>hack/next</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="hack/next"><meta name="groc-project-path" content="js/src/hack/next.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-bit"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-bit/blob/master/js/src/hack/next.js">js/src/hack/next.js</a></div></div><div id="document"><div class="segment"></div><div class="segment"><div class="comments "><div class="wrapper"><p><a href="https://graphics.stanford.edu/~seander/bithacks.html#NextBitPermutation">https://graphics.stanford.edu/~seander/bithacks.html#NextBitPermutation</a></p>
+<p>Compute the lexicographically next bit permutation</p>
+<p>Suppose we have a pattern of N bits set to 1 in an integer and we want the
+next permutation of N 1 bits in a lexicographical sense. For example, if N
+is 3 and the bit pattern is 00010011, the next patterns would be 00010101,
+00010110, 00011001,00011010, 00011100, 00100011, and so forth. The following
+is a fast way to compute the next permutation.</p>
+<p>  unsigned int v; // current permutation of bits
+  unsigned int w; // next permutation of bits</p>
+<p>  unsigned int t = v | (v - 1);
+  // t gets v&#39;s least significant 0 bits set to 1
+  // Next set to 1 the most significant bit to change, set to 0 the least
+  // significant ones, and add the necessary 1 bits.
+  w = (t + 1) | (((~t &amp; -~t) - 1) &gt;&gt; (__builtin_ctz(v) + 1));</p>
+<p>The __builtin_ctz(v) GNU C compiler intrinsic for x86 CPUs returns the
+number of trailing zeros. If you are using Microsoft compilers for x86, the
+intrinsic is _BitScanForward. These both emit a bsf instruction, but
+equivalents may be available for other architectures. If not, then consider
+using one of the methods for counting the consecutive zero bits mentioned
+earlier.</p>
+<p>Here is another version that tends to be slower because of its division
+operator, but it does not require counting the trailing zeros.</p>
+<p>  unsigned int t = (v | (v - 1)) + 1;
+  w = t | ((((t &amp; -t) / (v &amp; -v)) &gt;&gt; 1) - 1);</p>
+<p>Thanks to Dario Sneidermanis of Argentina, who provided this on November 28,
+2009.</p>
+<p>A Belorussian translation (provided by Webhostingrating) is available.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> next = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( v )</span> {</span>
+
+	<span class="hljs-keyword">var</span> t ;
+
+	t = ( v | ( v - <span class="hljs-number">1</span> ) ) + <span class="hljs-number">1</span> ;
+
+	<span class="hljs-keyword">return</span> t | ( ( ( ( t &amp; -t ) / ( v &amp; -v ) ) &gt;&gt;&gt; <span class="hljs-number">1</span> ) - <span class="hljs-number">1</span> ) ;
+
+} ;
+
+exports.next = next ;</div></div></div></div></body></html>
