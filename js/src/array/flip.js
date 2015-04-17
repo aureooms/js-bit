@@ -1,8 +1,8 @@
 
 
 /**
-* Flips a bit of an array of words.
-*/
+ * Flips a bit of an array of words.
+ */
 
 var __flip__ = function ( wflip , bfi , iib ) {
 

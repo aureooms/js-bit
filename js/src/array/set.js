@@ -1,8 +1,8 @@
 
 
 /**
-* Sets a bit of an array of words.
-*/
+ * Sets a bit of an array of words.
+ */
 
 var __set__ = function ( wset , bfi , iib ) {
 

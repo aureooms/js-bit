@@ -1,8 +1,8 @@
 
 
 /**
-* Gets a bit of an array of words.
-*/
+ * Gets a bit of an array of words.
+ */
 
 var __get__ = function ( wget , bfi , iib ) {
 
