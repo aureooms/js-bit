@@ -13,5 +13,5 @@
 	},
 	"out": "js/dist/",
 	"src": "js/src/",
-	"ns": "bit"
+	"name": "bit"
 }
