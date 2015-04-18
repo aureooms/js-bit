@@ -194,7 +194,11 @@ var next = function ( v ) {
 exports.next = next ;
 
 /* js/src/hack/sign.js */
+
 /**
+ *
+ * https://graphics.stanford.edu/~seander/bithacks.html#CopyIntegerSign
+ *
  * Compute the sign of an integer
  *
  *   int v;      // we want to find the sign of v
