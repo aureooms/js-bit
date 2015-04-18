@@ -10,7 +10,18 @@
 <a href="https://codeclimate.com/github/aureooms/js-bit"><img src="http://img.shields.io/codeclimate/github/aureooms/js-bit.svg?style=flat" alt="Code Climate"></a>
 <a href="https://www.npmjs.org/package/aureooms-js-bit"><img src="http://img.shields.io/npm/dm/aureooms-js-bit.svg?style=flat" alt="NPM downloads per month"></a>
 <a href="https://github.com/aureooms/js-bit/issues"><img src="http://img.shields.io/github/issues/aureooms/js-bit.svg?style=flat" alt="GitHub issues"></a></p>
-<pre><code class="lang-js"><span class="hljs-comment">/* Compute the next bit permutation of a 32-bit input number. */</span>
+<p>Can be managed through <a href="https://github.com/duojs/duo">duo</a>,
+<a href="https://github.com/componentjs/component">component</a>,
+<a href="https://github.com/bower/bower">bower</a>, or
+<a href="https://github.com/npm/npm">npm</a>.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> bit = <span class="hljs-built_in">require</span>( <span class="hljs-string">"aureooms-js-bit"</span> ) ;</code></pre>
+<p>Example usage:</p>
+<pre><code class="lang-js"><span class="hljs-comment">/* Compute the sign of an integer */</span>
+bit.sign(  <span class="hljs-number">0</span>  ) ; <span class="hljs-comment">// 0</span>
+bit.sign( -<span class="hljs-number">67</span> ) ; <span class="hljs-comment">// -1</span>
+bit.sign( <span class="hljs-number">432</span> ) ; <span class="hljs-comment">// +1</span>
+
+<span class="hljs-comment">/* Compute the next bit permutation of a 32-bit input number. */</span>
 bit.next( <span class="hljs-number">0b00101001</span> ) ; <span class="hljs-comment">// 0b00101010</span></code></pre>
 <p>References:</p>
 <ul>

@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><title>hack/sign</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="hack/sign"><meta name="groc-project-path" content="js/src/hack/sign.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-bit"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-bit/blob/master/js/src/hack/sign.js">js/src/hack/sign.js</a></div></div><div id="document"><div class="segment"></div><div class="segment"><div class="comments "><div class="wrapper"><p><a href="https://graphics.stanford.edu/~seander/bithacks.html#CopyIntegerSign">https://graphics.stanford.edu/~seander/bithacks.html#CopyIntegerSign</a></p>
+<p>Compute the sign of an integer</p>
+<p>  int v;      // we want to find the sign of v
+  int sign;   // the result goes here</p>
+<p>  // CHAR_BIT is the number of bits per byte (normally 8).
+  sign = -(v &lt; 0);  // if v &lt; 0 then -1, else 0.
+  // or, to avoid branching on CPUs with flag registers (IA32):
+  sign = -(int)((unsigned int)((int)v) &gt;&gt; (sizeof(int) <em> CHAR_BIT - 1));
+  // or, for one less instruction (but not portable):
+  sign = v &gt;&gt; (sizeof(int) </em> CHAR_BIT - 1);</p>
+<p>The last expression above evaluates to sign = v &gt;&gt; 31 for 32-bit integers. This
+is one operation faster than the obvious way, sign = -(v &lt; 0). This trick works
+because when signed integers are shifted right, the value of the far left bit
+is copied to the other bits. The far left bit is 1 when the value is negative
+and 0 otherwise; all 1 bits gives -1. Unfortunately, this behavior is
+architecture-specific.</p>
+<p>Alternatively, if you prefer the result be either -1 or +1, then use:</p>
+<p>  sign = +1 | (v &gt;&gt; (sizeof(int) * CHAR_BIT - 1));  // if v &lt; 0 then -1, else +1</p>
+<p>On the other hand, if you prefer the result be either -1, 0, or +1, then use:</p>
+<p>  sign = (v != 0) | -(int)((unsigned int)((int)v) &gt;&gt; (sizeof(int) <em> CHAR_BIT - 1));
+  // Or, for more speed but less portability:
+  sign = (v != 0) | (v &gt;&gt; (sizeof(int) </em> CHAR_BIT - 1));  // -1, 0, or +1
+  // Or, for portability, brevity, and (perhaps) speed:
+  sign = (v &gt; 0) - (v &lt; 0); // -1, 0, or +1</p>
+<p>If instead you want to know if something is non-negative, resulting in +1 or
+else 0, then use:</p>
+<p>  sign = 1 ^ ((unsigned int)v &gt;&gt; (sizeof(int) * CHAR_BIT - 1)); // if v &lt; 0 then 0, else 1</p>
+<p>Caveat: On March 7, 2003, Angus Duggan pointed out that the 1989 ANSI C
+specification leaves the result of signed right-shift implementation-defined,
+so on some systems this hack might not work. For greater portability, Toby
+Speight suggested on September 28, 2005 that CHAR_BIT be used here and
+throughout rather than assuming bytes were 8 bits long. Angus recommended the
+more portable versions above, involving casting on March 4, 2006. Rohit Garg
+suggested the version for non-negative integers on September 12, 2009.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> sign = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( v )</span> </span>{
+
+	<span class="hljs-keyword">return</span> ( v &gt; <span class="hljs-number">0</span> ) - ( v &lt; <span class="hljs-number">0</span> ) ;
+
+} ;
+
+exports.sign = sign ;</div></div></div></div></body></html>
