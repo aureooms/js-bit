@@ -14,12 +14,21 @@ Bit twiddling hacks code bricks for JavaScript.
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-bit.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-bit)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-bit.svg?style=flat)](https://github.com/aureooms/js-bit/issues)
 
+Can be managed through [duo](https://github.com/duojs/duo),
+[component](https://github.com/componentjs/component),
+[bower](https://github.com/bower/bower), or
+[npm](https://github.com/npm/npm).
+
+```js
+let bit = require( "aureooms-js-bit" ) ;
+```
+
+Example usage:
 
 ```js
 /* Compute the next bit permutation of a 32-bit input number. */
 bit.next( 0b00101001 ) ; // 0b00101010
 ```
-
 
 References:
 
