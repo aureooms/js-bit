@@ -4,7 +4,7 @@
 	"scripts": [
 		"js/dist/bit.js"
 	],
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "bit twiddling hacks code bricks for JavaScript",
 	"main": "js/dist/bit.js",
 	"license": "AGPL-3.0"
