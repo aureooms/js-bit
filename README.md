@@ -26,6 +26,11 @@ let bit = require( "aureooms-js-bit" ) ;
 Example usage:
 
 ```js
+/* Compute the sign of an integer */
+bit.sign(  0  ) ; // 0
+bit.sign( -67 ) ; // -1
+bit.sign( 432 ) ; // +1
+
 /* Compute the next bit permutation of a 32-bit input number. */
 bit.next( 0b00101001 ) ; // 0b00101010
 ```
