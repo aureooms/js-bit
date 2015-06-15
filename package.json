@@ -12,8 +12,8 @@
 	},
 	"homepage": "http://aureooms.github.io/js-bit/",
 	"devDependencies": {
-		"aureooms-node-package": "^4.0.1",
-		"aureooms-js-array": "^2.0.2"
+		"aureooms-node-package": "^4.2.5",
+		"aureooms-js-array": "^2.2.1"
 	},
 	"keywords": [
 		"binary",
