@@ -13,5 +13,6 @@
 	},
 	"out": "js/dist/",
 	"src": "js/src/",
-	"name": "bit"
+	"name": "bit",
+	"babel": true
 }
