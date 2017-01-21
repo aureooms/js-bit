@@ -13,7 +13,7 @@
 	"homepage": "http://aureooms.github.io/js-bit/",
 	"devDependencies": {
 		"aureooms-node-package": "^6.0.1",
-		"aureooms-js-array": "^3.1.0"
+		"aureooms-js-array": "^4.0.0"
 	},
 	"keywords": [
 		"binary",
