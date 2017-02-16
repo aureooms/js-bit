@@ -1,7 +1,7 @@
 {
 	"license": "AGPL-3.0",
 	"description": "bit twiddling hacks code bricks for JavaScript",
-	"name": "aureooms-js-bit",
+	"name": "@aureooms/js-bit",
 	"author": "aureooms",
 	"bugs": {
 		"url": "https://github.com/aureooms/js-bit/issues"
@@ -13,7 +13,7 @@
 	"homepage": "http://aureooms.github.io/js-bit/",
 	"devDependencies": {
 		"aureooms-node-package": "^6.0.1",
-		"aureooms-js-array": "^3.1.0"
+		"@aureooms/js-array": "^3.1.0"
 	},
 	"keywords": [
 		"binary",
