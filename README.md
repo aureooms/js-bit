@@ -3,7 +3,7 @@
 
 Bit twiddling hacks code bricks for JavaScript.
 
-[![NPM license](https://img.shields.io/npm/l/@aureooms/js-bit.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-bit/master/LICENSE)
+[![License](https://img.shields.io/github/license/aureooms/js-bit.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-bit/master/LICENSE)
 [![NPM version](https://img.shields.io/npm/v/@aureooms/js-bit.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-bit)
 [![Bower version](https://img.shields.io/bower/v/@aureooms/js-bit.svg?style=flat)](http://bower.io/search/?q=@aureooms/js-bit)
 [![Build Status](https://img.shields.io/travis/aureooms/js-bit.svg?style=flat)](https://travis-ci.org/aureooms/js-bit)
