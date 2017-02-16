@@ -1,7 +1,7 @@
 
 var array ;
 
-array = require( "aureooms-js-array" ) ;
+array = require( "@aureooms/js-array" ) ;
 
 test( "array", function ( ) {
 
