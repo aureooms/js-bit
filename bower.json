@@ -14,7 +14,7 @@
     "inch.json",
     ".codeclimate.yml"
   ],
-  "homepage": "http://aureooms.github.io/js-bit/",
+  "homepage": "http://make-github-pseudonymous-again.github.io/js-bit/",
   "version": "1.0.6",
   "main": "js/dist/bit.js",
   "name": "aureooms-js-bit"

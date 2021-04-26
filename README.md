@@ -1,4 +1,4 @@
-[js-bit](http://aureooms.github.io/js-bit)
+[js-bit](http://make-github-pseudonymous-again.github.io/js-bit)
 ==
 
 Bit twiddling hacks code bricks for JavaScript.
