@@ -4,11 +4,11 @@
 	"name": "@aureooms/js-bit",
 	"author": "aureooms",
 	"bugs": {
-		"url": "https://github.com/aureooms/js-bit/issues"
+		"url": "https://github.com/make-github-pseudonymous-again/js-bit/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/aureooms/js-bit.git"
+		"url": "https://github.com/make-github-pseudonymous-again/js-bit.git"
 	},
 	"homepage": "http://make-github-pseudonymous-again.github.io/js-bit/",
 	"devDependencies": {
